@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    @import url("https://use.typekit.net/rmw3byf.css");
+
+
+    body, h1, h2, h3, p, ul, section, footer { margin: 0; padding: 0; overflow: hidden; }
+    body { background-color: black; }
+
+    .logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2.13vw; /* 3.6vh -> 2.13vw */
+      width: 13.12vw;
+    }
+
+    .line {
+      margin-top: 0.59vw; /* 1vh -> 0.59vw */
+      width: 100%;
+      height: 0.18vw; /* 0.3vh -> 0.18vw */
+      background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(109,109,109,1) 50%, rgba(0,0,0,1) 100%);
+    }
+
+    .box {
+      margin-top: 2.72vw; /* 4.6vh -> 2.72vw */
+      margin-left: 6vw;
+      width: 45.27vw;
+      height: 43.69vw; /* 73.96vh -> 43.69vw */
+      border-radius: 20%;
+
+     background: rgb(255,243,192);
+    background: radial-gradient(circle at center 110%, rgba(255,243,192,1) 0%, rgba(63,63,63,1) 100%);
+
+
+ position: relative;
+      z-index: -2;
+    }
+
+    .title {
+      position: absolute;
+      top: 3.84vw;  /* 6.5vh -> 3.84vw */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.82vw;
+      font-family: "sofia-pro", sans-serif;
+      color: white;
+      font-weight: 300;
+    }
+
+    .des{
+      position: absolute;
+      top: 30.38vw; /* 51.5vh -> 30.38vw */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.16vw;
+      font-family: "sofia-pro", sans-serif;
+      color: #EFEFEF;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.5;
+      width: 30.64vw;
+      word-break: keep-all;
+      line-height: 1.58;
+    }
+
+    .box::after {
+      content: "Talk with Yerin";
+      font-size: 0.99vw;
+      font-family: "sofia-pro", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      color: white;
+
+      background: rgb(255,243,192);
+background: radial-gradient(circle at center -110%, rgba(255,243,192,1) 0%, rgba(63,63,63,1) 100%);
+      
+      position: absolute;
+      bottom: -4.11vw; /* -6.95vh -> -4.11vw */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4.11vw; /* 6.95vh -> 4.11vw */
+      width: 12.98vw;
+      border-bottom-left-radius: 1.2vw;
+      border-bottom-right-radius: 1.2vw;
+    }
+
+    .profile{
+      position: absolute;
+      top: 8.38vw; /* 14.2vh -> 8.38vw */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 19.5vw;
+      z-index: -1;
+    }
+
+    .fileb-container {
+      position: relative;
+    }
+
+    .fileb{
+      position: absolute;
+      top: 6.15vw; /* 10.43vh -> 6.15vw */
+      right: 6vw;
+      width: 48.1vw;
+      z-index: 2;
+    }
+
+    .graph{
+      position: absolute;
+      top: 6.15vw; /* 10.43vh -> 6.15vw */
+      right: 6vw;
+      width: 48.1vw;
+      z-index: 3;
+      animation: grow 1.2s cubic-bezier(0, 0, 0.44, 0.84);
+     mix-blend-mode: overlay;
+    }
+
+      .graphdot{
+      position: absolute;
+      top: 6.15vw; /* 10.43vh -> 6.15vw */
+      right: 6vw;
+      width: 48.1vw;
+      z-index: 3;
+      animation: grow 1.2s cubic-bezier(0, 0, 0.44, 0.84);
+    }
+
+    @keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+    .button {
+  position: absolute;
+  top: 47.8vw; /* 80.9vh -> 47.8vw */
+  right: 19vw;
+  transform: translateX(-50%);
+  width: 10.09vw;
+  height: 3.5vw; /* 5.95vh -> 3.52vw */
+  background-color: white;
+  box-shadow: 0 0 12px rgba(141, 165, 0, 0.5);
+  font-family: "sofia-pro", sans-serif;
+  font-size: 1.46vw;
+  color: #828282;
+  font-weight: 500;
+  border-radius: 3vw;
+  z-index: 4;
+  display: flex; /* 추가 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */}
+
+
+  </style>
+</head>
+<body>
+  <img onclick="window.location.href='../../index.html'" src="logo.png" class="logo"> 
+  <div class="line"></div>
+
+  <div class="fileb-container">
+    <img class="fileb" src="fileb.png">
+    <img class="graph" src="graph.png">
+    <img class="graphdot" src="graphdot.png">
+    <div class="button">BX/BI</div>
+  </div>
+
+  <div class="box">
+    <div class="title">Yerin You</div>
+    <img class="profile" src="profile.png">
+    <div class="des">
+      유예린 디자이너는 성실함과 따뜻한 감각이 돋보이며, BX 디자인 분야에서 꾸준히 우수한 성과를 보여주고 있는 디자이너입니다. 특히, 세련된 시각 언어와 감각적인 접근을 통해 클라이언트와 협업자들에게 만족감을 선사하는 귀중한 인재입니다.
+    </div>
+  </div>
+
+</body>
+</html>

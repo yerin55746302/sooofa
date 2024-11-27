@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    @import url("https://use.typekit.net/rmw3byf.css");
+
+
+    body, h1, h2, h3, p, ul, section, footer { margin: 0; padding: 0; overflow: hidden; }
+    body { background-color: black; }
+
+    .logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2.13vw; /* 3.6vh -> 2.13vw */
+      width: 13.12vw;
+    }
+
+    .line {
+      margin-top: 0.59vw; /* 1vh -> 0.59vw */
+      width: 100%;
+      height: 0.18vw; /* 0.3vh -> 0.18vw */
+      background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(109,109,109,1) 50%, rgba(0,0,0,1) 100%);
+    }
+
+  .left {
+  position: absolute;
+  top: 4.8vw; /* 원하는 지점에서 시작 */
+  left: 0;
+  width: 50%;
+  height: calc(100vh - 0.18vw); /* 전체 높이에서 여백 제외 */
+  background-color: #c1ff58;
+  z-index: -10;
+}
+
+  .right {
+  position: absolute;
+  top: 4.8vw; /* 원하는 지점에서 시작 */
+  right: 0;
+  width: 50%;
+  height: calc(100vh - 0.18vw); /* 전체 높이에서 여백 제외 */
+  background-color: black; 
+  z-index: -10;
+   overflow-y: auto; /* 세로 스크롤 추가 */
+  overflow-x: hidden; /* 가로 스크롤 제거 */
+}
+
+.pro {
+  position: absolute;
+  top: 12vw; /* 위에서 17.48vw 떨어진 위치 */
+  left: 50%; /* 부모 요소의 가로 중앙 */
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  width: 33vw;
+  z-index: 1;
+}
+
+.eye {
+  position: absolute;
+  top: 11.5vw; /* 위에서 17.48vw 떨어진 위치 */
+  left: 50%; /* 부모 요소의 가로 중앙 */
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  width: 33vw;
+  z-index: 2;
+   transition: transform 0.2s ease-out;
+}
+
+  .eyeon {
+  position: absolute;
+  top: 12vw; /* 위에서 17.48vw 떨어진 위치 */
+  left: 50%; /* 부모 요소의 가로 중앙 */
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  width: 33vw;
+  z-index: 3;
+}
+
+  .text {
+  position: absolute;
+  top: 7vw; /* 위에서 5.81vw 떨어진 위치 */
+  left: 50%; /* 부모 요소의 가로 중앙 */
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  color: black; /* 글자 색상 */
+  font-size: 1.2vw; /* 글자 크기 (필요에 따라 조정) */
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 200;
+}
+
+  .arrow {
+  position: absolute;
+  top: 9vw; /* 위에서 12.45vw 떨어진 위치 */
+  left: 50%; /* 부모 요소의 가로 중앙 */
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  width: 0.57vw; /* 이미지 폭 */
+}
+
+  .bubble {
+  position: absolute;
+  top: 18vw; /* 위에서 떨어진 위치 */
+  
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+ 
+  background-color: #fdfb90; /* 말풍선 색상 */
+  padding: 0.7vw 1.5vw; /* 위아래, 좌우 마진 */
+  border-radius: 0.6vw; 
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 550;
+  font-size: 0.8vw;
+display: none; 
+z-index: 100}
+
+  .bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -0.9vw; /* 꼬리가 말풍선 아래쪽에 위치하도록 */
+  left: 75%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 0.7vw solid transparent; /* 왼쪽 삼각형의 투명 부분 */
+  border-right: 0.7vw solid transparent; /* 오른쪽 삼각형의 투명 부분 */
+  border-top: 1vw solid #fdfb90; /* 꼬리 색상 */
+}
+
+
+
+.title {
+    position: absolute;
+    top: 4vw; /* 160.294px -> vw로 변환 */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2vw; /* 35pt -> vw로 변환 */
+    color: white;
+    font-family: "sofia-pro", sans-serif;
+  font-weight: 300;
+  }
+
+  /* "You can contact with Designer Sieon from below links" 텍스트 */
+  .subtitle {
+    position: absolute;
+    top: 8vw; /* 36.6966px 아래로 떨어진 위치를 vw로 변환 */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.7vw; /* 29pt -> vw로 변환 */
+    color: #AEAEAE;
+    font-family: "sofia-pro", sans-serif;
+    font-weight: 200;
+    text-align: center;
+  }
+
+    #content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10.5vw; /* 박스들 사이의 간격 */
+  padding-top: 16vw; /* 첫 번째 박스의 시작 위치 */
+}
+
+ #content-container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10.5vw; /* 박스들 사이의 간격 */
+  padding-top: 16vw; /* 첫 번째 박스의 시작 위치 */
+}
+
+.rounded-box {
+  position: relative; /* absolute에서 relative로 변경 */
+  width: 38.56vw;
+  height: 24.64vw;
+  background: radial-gradient(circle at 50% 120%, rgba(207,255,51,1) 0%, rgba(63,63,63,1) 50%);
+  border-radius: 4.76vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* 가로 중앙 정렬 */
+}
+
+.group1, .group2 {
+  left: 50%;
+  transform: translateX(-77%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%; /* 각 그룹이 동일한 너비를 가지도록 */
+  height: 100%; /* 전체 높이 사용 */
+  position: relative; /* 내부 요소들의 절대 위치 기준점 */
+}
+
+
+
+.preview { position: absolute;
+  top: 1.3vw; /* 상단 여백 */
+  font-size: 3vw; /* 폰트 크기 */
+  color: #8B8B8B; /* 글자 색상 */
+  font-size: 1.2vw; /* 글자 크기 (필요에 따라 조정) */
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 200;
+}
+
+.preview-image {position: absolute;
+  width: 24.1vw;  
+  height: 17.4vw;
+  position: absolute;
+  top: 4vw;
+}
+
+.with { position: absolute;
+  top: 1.3vw;
+  font-size: 2.5vw; /* 폰트 크기 */
+  color: #8B8B8B;
+  font-size: 1.2vw; /* 글자 크기 (필요에 따라 조정) */
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 200;
+}
+
+.rectangle { position: absolute;
+  top: 4vw; /* 사각형 위치 */;
+  width: 6.49vw; 
+  height: 17.07vw; 
+  border-radius: 5vw; background: rgb(91,91,91);
+background: linear-gradient(0deg, rgba(91,91,91,0) 0%, rgba(91,91,91,1) 100%);
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4.9vw;  /* 사진 크기 */
+  height: 4.9vw; /* 사진 크기 */
+}
+
+.image1 {
+  top:  1.27vw; /* 첫 번째 이미지 위치 */
+}
+
+.image2 {
+  top: calc(1.27vw + 4.9vw + 0.8vw); /* 두 번째 이미지 위치 (첫 번째 이미지와 간격만큼 아래로) */
+}
+
+.image3 {
+  position: absolute;
+  top: calc(1.27vw + 4.9vw + 0.8vw + 4.9vw + 0.8vw);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.6vw;  /* 사진 크기 */
+  height: 3.6vw; /* 사진 크기 */
+
+}
+
+
+.undertitle {
+    position: absolute;
+    top: 26vw; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1vw; /* 29pt -> vw로 변환 */
+    color: #AEAEAE;
+    font-family: "sofia-pro", sans-serif;
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 7.89vw;
+  }
+
+  .preview-image2 {
+  position: absolute;
+  top: 4vw; /* 수직 위치 */
+  left: 50%; /* 부모 요소의 가로 중앙 */
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  width: 33vw;
+  height: 17.4vw;
+}
+
+  .ending-box {
+  position: relative;
+  width: 38.56vw;
+  height: 7vw;
+  background: radial-gradient(circle at 50% 270%, rgba(207,255,51,1) 0%, rgba(63,63,63,1) 70%);
+  border-radius: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* 가로 중앙 정렬 */
+   margin: 4vw auto; /* 위, 아래 간격을 주기 위한 margin */
+  margin-bottom: 2vw;
+}
+
+.ending-text {
+  font-size: 1.4vw; /* 텍스트 크기 */
+  color: #A9A9A9;   /* 텍스트 색상 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 200;
+}
+
+#ending-container .ending-box:last-child {
+  margin-bottom: 20vw; /* 원하는 여백 */
+}
+
+/* 스크롤바 디자인 */
+::-webkit-scrollbar {
+  width: 1.43vw;  /* 폭 */
+  height: 30.91vw; /* 높이 */
+}
+
+/* 스크롤바의 트랙 (배경) */
+::-webkit-scrollbar-track {
+  background-color: transparent;  /* 투명 */
+}
+
+/* 스크롤바의 막대 */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, rgba(91, 91, 91, 0) 0%, rgba(91, 91, 91, 1) 100%);
+  border-radius: 20vw;
+  height: 25vw;
+}
+
+/* 스크롤바의 막대 (hover 상태) */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(0deg, rgba(91, 91, 91, 0) 0%, rgba(91, 91, 91, 0.7) 100%);  /* 더 밝아짐 */
+}
+
+
+
+    
+  </style>
+</head>
+<body>
+  <img onclick="window.location.href='../../../index.html'" src="logo.png" class="logo"> 
+  <div class="line"></div>
+  <div class="left"><img src="pro.png" class="pro">
+    <img src="eye.png" class="eye">
+    <img src="eyeon.png" class="eyeon">
+
+    <div class="text">Tab to Talk with Sieon Ahn</div><div class="bubble">괜찮아요~ 할 수 있다!</div><img src="arrow.png" class="arrow"></div>
+
+    <div class="right">
+
+  <div class="title">Sieon Ahn</div>
+  <div class="subtitle">You can contact with Designer Sieon from below links</div>
+ 
+<div id="content-container"></div>
+<div id="content-container2"></div>
+<div id="ending-container"></div>
+
+
+
+
+
+</div>
+
+
+  <script>
+  let messageIndex = 0; // 현재 출력할 대사 인덱스
+let clickCountBeforeChange = 0; // 말풍선 바뀌기 전 클릭 횟수 추적
+let clickCountAfterChange = 0; // 말풍선 바뀐 후 클릭 횟수 추적
+let lastClickTime = 0; // 마지막 클릭 시간 추적
+let isChanged = false; // 변한 상태를 추적하는 변수
+
+function setRandomPosition() {
+  const bubble = document.querySelector('.bubble');
+  const randomPosition = Math.random() * (65 - 35) + 35; // 35%~65% 사이에서 랜덤 위치 설정
+  bubble.style.left = randomPosition + '%';
+}
+
+function updateBubbleContent() {
+  const bubble = document.querySelector('.bubble');
+  const messages = [
+    '안녕하세요, 잘 부탁해요!',
+    '언제든지 불러줘요!',
+    '열심히 힘내봐요 우리!',
+    '아자아자 할 수 있다!',
+    '다국적 클라이언트들과의 협업 경험이 있어요.',
+    '모르는 건 언제든지 물어봐요~',
+    '주말에 같이 작업할래요?'
+  ];
+  bubble.textContent = messages[messageIndex];
+  messageIndex = (messageIndex + 1) % messages.length; // 순차적으로 대사 변경
+}
+
+function changeBackgroundAndMessage() {
+  const left = document.querySelector('.left'); // .left 요소 선택
+  left.style.backgroundColor = '#e93328'; // .left 배경 색 변경
+  const bubble = document.querySelector('.bubble');
+  
+  // 새로운 대사로 변경
+  const messagesAfterClick = [
+    '아 정말요',
+    '으음 노력하지 않는건 싫어요.',
+    '**天官赐福 百无禁忌**'
+  ];
+  
+  const randomIndex = Math.floor(Math.random() * messagesAfterClick.length);
+  bubble.textContent = messagesAfterClick[randomIndex];
+}
+
+function toggleBubble() {
+  // 변한 상태에서 클릭을 방지
+  if (isChanged) {
+    return; // 클릭이 되지 않도록
+  }
+
+  const currentTime = new Date().getTime();
+  if (currentTime - lastClickTime <= 400) { // 1초 이내에 클릭
+    clickCountBeforeChange++;
+  } else {
+    clickCountBeforeChange = 1; // 클릭이 1초 이상 간격을 두면 리셋
+  }
+  lastClickTime = currentTime;
+
+  const existingBubble = document.querySelector('.bubble');
+  if (clickCountBeforeChange >= 3) {
+    // 4번 이상 클릭되면 배경 색과 대사 변경
+    changeBackgroundAndMessage();
+    isChanged = true; // 상태가 변경되었음을 표시
+    clickCountAfterChange++; // 대사 변경 후 클릭 카운트 증가
+    
+    // 2초 후에 상태를 원래대로 되돌리기
+    setTimeout(() => {
+      const left = document.querySelector('.left');
+      left.style.backgroundColor = ''; // 배경 색 원래대로
+      if (existingBubble) {
+        existingBubble.remove(); // 기존 말풍선 제거
+      }
+      isChanged = false; // 클릭 가능 상태로 복원
+      messageIndex = 0; // 메시지 인덱스 초기화하여 대사 순서가 다시 정상적으로 출력되도록
+    }, 2000); // 2초 후 원래 상태로 복원
+  } else {
+    if (existingBubble) {
+      existingBubble.remove(); // 기존 말풍선 제거
+    }
+
+    const newBubble = document.createElement('div');
+    newBubble.classList.add('bubble');
+    document.querySelector('.left').appendChild(newBubble);
+
+    setRandomPosition();
+    updateBubbleContent(); // 순차적으로 대사 업데이트
+    newBubble.style.display = 'block';
+  }
+}
+
+// 디버깅: 클릭 카운트를 콘솔에 출력
+function logClickCounts() {
+  console.log('말풍선 바뀌기 전 클릭 횟수:', clickCountBeforeChange);
+  console.log('말풍선 바뀐 후 클릭 횟수:', clickCountAfterChange);
+}
+
+document.querySelector('.left').addEventListener('click', toggleBubble);
+document.querySelector('.left').addEventListener('click', logClickCounts);
+
+const eye = document.querySelector('.eye');
+
+  document.addEventListener('mousemove', function(event) {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const deltaX = mouseX - centerX;
+    const deltaY = mouseY - centerY;
+
+    const maxMovementX = 0.6;  // 좌우로 최대 0.6vw 이동
+    const maxMovementY = 0.3;  // 위아래로 최대 0.3vw 이동
+
+    const moveX = Math.min(Math.max(deltaX, -maxMovementX), maxMovementX);
+    const moveY = Math.min(Math.max(deltaY, -maxMovementY), maxMovementY);
+
+    eye.style.transform = `translateX(-50%) translate(${moveX}vw, ${moveY}vw)`;
+  });
+
+const renderContent = () => {
+const data1 = [
+  { previewImage: 'image1.png', image1Src: 'minyoung.png', image2Src: 'dahyun.png', image3Src: '', date: '2024. 08. 29 [Dittoo]' },
+  { previewImage: 'image2.png', image1Src: 'minsol.png', image2Src: 'minyoung.png', image3Src: 'ex.png', date: '2024. 01. 03 [Beeside You]' },  
+  { previewImage: 'image3.png', image1Src: 'minsol.png', image2Src: '', image3Src: '', date: '2024. 04. 30 [Drops to Rain]' },
+  { previewImage: 'image4.png', image1Src: 'yerin.png', image2Src: 'ex.png', image3Src: '', date: '2024. 05. 14 [Kakao Bank(education)]' },
+  { previewImage: 'image5.png', image1Src: 'dahyun.png', image2Src: 'seula.png', image3Src: '', date: '2023. 08. 13 [Siren]' },
+];
+
+
+  const data2 = [
+    { previewImage: 'image6.png', date: '2024. 06. 03 [Daehan Multiplex]' },
+    { previewImage: 'image7.png', date: '2024. 12. 16 [Naver TV redesign]' },
+    { previewImage: 'image8.png', date: '2023. 04. 26 [2024 Oriental Four Gods Calendar]' },
+    { previewImage: 'image9.png', date: '2023. 06. 17 [Tmoney Go redesign]' },
+    { previewImage: 'image10.png', date: '2023. 05. 13 [Lush Package Design]' },
+  ];
+
+  const container = document.getElementById('content-container');
+  
+  // 원하는 순서대로 배열의 인덱스를 설정
+  const desiredOrder = [0,1,5,2,3,4,6,7,8,9]; // 예시 순서 (data1, data2 인덱스 합쳐서)
+  
+  // data1과 data2 합치기
+  const combinedData = [
+    ...data1.map((item, index) => ({ ...item, type: 'data1', index })),
+    ...data2.map((item, index) => ({ ...item, type: 'data2', index: data1.length + index }))
+  ];
+
+  // 원하는 순서대로 배열을 정렬
+  const orderedData = desiredOrder.map(index => combinedData[index]);
+
+  const createBox = (item) => {
+  if (item.type === 'data1') {
+    return `
+      <div class="rounded-box">
+        <div class="group1">
+          <div class="preview">Preview</div>
+          <img src="${item.previewImage}" class="preview-image">
+        </div>
+
+        <div class="group2">
+          <div class="with">with</div>
+          <div class="rectangle">
+            <img src="${item.image1Src}" class="image image1">
+            ${item.image2Src ? `<img src="${item.image2Src}" class="image image2">` : ''}
+            ${item.image3Src ? `<img src="${item.image3Src}" class="image image3">` : ''}
+          </div>
+        </div>
+
+        <div class="undertitle">${item.date}</div>
+      </div>
+    `;
+  }else {
+      return `
+        <div class="rounded-box">
+          <div class="preview">Preview</div>
+          <img src="${item.previewImage}" class="preview-image2">
+          <div class="undertitle">${item.date}</div>
+        </div>
+      `;
+    }
+  };
+
+  // 정렬된 순서대로 각 항목을 렌더링
+  orderedData.forEach(item => {
+    container.insertAdjacentHTML('beforeend', createBox(item));
+  });
+};
+
+// 함수 호출
+renderContent();
+
+const container = document.getElementById('ending-container');
+
+// 텍스트 내용 배열
+const texts = [
+  'Behence',
+  'Instagram',
+  'Email'
+];
+
+texts.forEach(text => {
+  const endingBox = document.createElement('div');
+  endingBox.classList.add('ending-box');
+
+  const endingText = document.createElement('span');
+  endingText.classList.add('ending-text');
+  endingText.textContent = text;
+
+  endingBox.appendChild(endingText);
+  container.appendChild(endingBox);
+});
+
+
+
+
+
+
+  
+
+  </script>
+
+</body>
+</html>

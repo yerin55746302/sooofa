@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    @import url("https://use.typekit.net/rmw3byf.css");
+
+    body, h1, h2, h3, p, ul, section, footer, body { margin: 0; padding: 0; overflow: hidden; }
+    body { background-color: black; }
+
+    .logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 3.6vh;
+      width: 13.12vw;
+    }
+
+    .line {
+      margin-top: 1vh;
+      width: 100%;
+      height: 0.3vh;
+      background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(109,109,109,1) 50%, rgba(0,0,0,1) 100%);
+    }
+
+    .image-container {
+      padding-top: 0vh;
+      position: relative;
+    }
+
+    .image-container img {
+      position: absolute;
+      width: 70vw;
+      right: 6vw;
+      transition: transform 0.1s linear;
+    }
+
+    /* 각 이미지에 고유한 top 값 설정 */
+    .file1 { top: 0; transform-origin: right bottom;}
+    .file2 { top: 11.25vh; transform-origin: right bottom;}
+    .file3 { top: 22.5vh; transform-origin: right bottom;}
+    .file4 { top: 33.75vh; transform-origin: right bottom;}
+    .file5 { top: 45vh; transform-origin: right bottom;}
+    .file6 { top: 56.25vh; transform-origin: right bottom;}
+
+    /* 각 이미지에 호버 효과를 적용 */
+    .file1:hover,
+    .file2:hover,
+    .file3:hover,
+    .file4:hover,
+    .file5:hover,
+    .file6:hover {
+      transform: scale(1.1);z
+    }
+  </style>
+</head>
+<body>
+  <img onclick="window.location.href='../index.html'" src="logo.png" class="logo"> 
+  <div class="line"></div>
+  <div class="image-container">
+    <img class="file1" onclick="window.location.href='yerin/index.html'" src="file1.png">
+    <img class="file2"  onclick="window.location.href='seula/index.html'" src="file2.png">
+    <img class="file3"  onclick="window.location.href='minsol/index.html'" src="file3.png">
+    <img class="file4"  onclick="window.location.href='minyoung/index.html'" src="file4.png">
+    <img class="file5" onclick="window.location.href='dahyun/index.html'" src="file5.png">
+    <img class="file6" onclick="window.location.href='sieon/index.html'" src="file6.png">
+  </div>
+</body>
+</html>

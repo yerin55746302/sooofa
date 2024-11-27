@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+  @import url("https://use.typekit.net/rmw3byf.css");
+
+	body, h1, h2, h3, p, ul, section, footer, body {margin: 0; padding: 0; overflow: hidden;}
+	body{background-color: black;}
+
+.logo {
+  display: block;         
+  margin-left: auto;          
+  margin-right: auto;        
+ 	padding-top: 3.6vh;
+   width: 13.12vw;
+}
+
+	.line {
+	margin-top: 1vh;
+  width: 100%;
+  height: 0.3vh; 
+  background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(109,109,109,1) 50%, rgba(0,0,0,1) 100%);}
+
+   .text-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -4.5vh;
+  font-size: 18.5vw;
+  font-family: "sofia-pro", sans-serif;
+font-weight: 100;
+font-style: normal;
+  color: white;
+}
+
+	.text{
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+  font-size: 2.43vw;
+  font-family: "sofia-pro", sans-serif;
+font-weight: 100;
+font-style: normal;
+  color: white;
+  position: relative; /* 이 부분 추가 */
+  z-index: 20; /* 원하는 값으로 설정 */
+}
+
+  .text:hover {
+  opacity: 0.5; /* 호버 시 흐려지게 설정 */
+  transition: opacity 0.3s ease; /* 부드럽게 흐려지는 효과 */
+  cursor: pointer;
+}
+
+	
+	.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  position: fixed;   /* 화면에 고정 */
+  top: 25vw;         /* 하단에 고정 */
+  width: 100%;       /* 화면 너비 100% */
+  z-index: 10;       /* 다른 요소들 위에 */
+}
+
+	.image-container img {
+  	width:  19.3vw;
+    margin-left: -2.15vw;
+    margin-right: -2.15vw;
+  	height: auto;
+    transition: transform 0.3s ease;}
+
+    .image-container img:hover {
+   transform: translateY(-5vh);  /* -20vh만큼 위로 이동 */
+}
+
+  	
+
+	</style>
+</head>
+<body>
+<img src="logo.png" class="logo" > </div>	
+<div class="line"></div>
+<div class="text-container">Sofa Studio</div>
+<div class="text" onclick="window.location.href='file/index.html'">Tap to start</div>
+
+<div class="image-container">
+  <img onclick="window.location.href='file/dahyun/index.html'" src="op1.png">
+  <img onclick="window.location.href='file/sieon/index.html'"  src="op2.png">
+  <img onclick="window.location.href='file/minsol/index.html'" src="op3.png">
+  <img onclick="window.location.href='file/seula/index.html'" src="op4.png">
+  <img onclick="window.location.href='file/minyoung/index.html'" src="op5.png">
+  <img onclick="window.location.href='file/yerin/index.html'" src="op6.png">
+</div>
+
+</body>
+</html>
